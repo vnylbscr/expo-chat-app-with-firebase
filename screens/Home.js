@@ -42,30 +42,8 @@ const Home = () => {
                 Alert.alert(`Firestore'a eklenirken bir hata ile karşılaşıldı ${error}`);
             });
     }
-    const messageSet = () => {
-        setMessages([
-            {
-                id: 1,
-                text: 'Merhaba',
-                createdAt: new Date(),
-                user: {
-                    _id: 2,
-                    name: 'Merto',
-                    avatar: 'https://placeimg.com/140/140/any',
-                },
-            },
-            {
-                id: 2,
-                text: 'Sana da Merhaba',
-                createdAt: new Date(),
-                user: {
-                    _id: 3,
-                    name: 'Kubilay',
-                    avatar: 'https://img-s1.onedio.com/id-53c192b2aa1cf6461479f600/rev-0/w-635/listing/f-jpg-webp/s-05c3e39520a71aa331d662e1f3beba9c8072e938.webp',
-                },
-            },
-        ])
-    }
+
+    
     const handleSend = useCallback((messages = []) => {
         setMessages(prevMessages => GiftedChat.append(prevMessages, messages));
     }, []);
