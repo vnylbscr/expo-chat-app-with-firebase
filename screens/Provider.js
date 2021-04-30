@@ -8,6 +8,7 @@ const Provider = () => {
         <AuthProvider>
             <Loading />
         </AuthProvider>
+        
     )
 }
 

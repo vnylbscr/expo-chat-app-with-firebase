@@ -35,7 +35,18 @@ const AuthProvider = ({ children }) => {
                     } catch (error) {
                         console.log(error);
                     }
-                }
+                },
+                logout: async () => {
+                    try {
+                        firebase.auth().signOut()
+                        .then(()=> {
+                            Alert.alert("Çıkış yapıldı!");
+                        })
+                    } catch (error) {
+                        console.log(error);
+                    }
+                } 
+
             }}
         >
             {children}
