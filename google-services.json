@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "584449911698",
+    "project_id": "agprogramlama-e5204",
+    "storage_bucket": "agprogramlama-e5204.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584449911698:android:19682738ee99a31b5f6f4b",
+        "android_client_info": {
+          "package_name": "com.mert.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "584449911698-fdplo6heeidvshkfksti7kktsu7ieja5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG8Jyt4_3YM3cTRT0NoEZyhSAZGijiDT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "584449911698-fdplo6heeidvshkfksti7kktsu7ieja5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
