@@ -1,61 +1,30 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react'
-import { View, Text, Alert } from 'react-native'
+import React, { useContext} from 'react'
+import { Text, StyleSheet, Dimensions } from 'react-native'
 import { AuthContext } from '../contexts/AuthContext';
-import { GiftedChat } from 'react-native-gifted-chat';
-import firebase from "firebase";
-import * as Permissions from 'expo-permissions';
-import * as Notification from 'expo-notifications';
-import { LogBox } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
-LogBox.ignoreLogs(['Setting a timer']);
+const { height, width } = Dimensions.get('screen');
+//LogBox.ignoreLogs(['Setting a timer']);
 const Home = () => {
     const { user } = useContext(AuthContext);
-    const [messages, setMessages] = useState([])
-    const [token, setToken] = useState('');
-    const db = firebase.firestore();
-    const chatsRef = db.collection('messages');
-    useEffect(() => {
-        registerForNotifications();
-    }, []);
-
-    const registerForNotifications = async () => {
-        const { status } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
-        let finalStatus = status;
-        //Kullanıcıya izin sor
-        if (status !== "granted") {
-            const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
-            status = finalStatus;
-        }
-        //izin verilmemiş ise
-        if (finalStatus !== "granted") {
-            return;
-        }
-        let token = await Notification.getExpoPushTokenAsync();
-        setToken(token.data);
-        //Token veritabanına kaydet
-        db.collection('users').doc(user.uid).set({
-            token: token.data
-        }).then(() => {
-            console.log("Başaryıla eklendi");
-        })
-            .catch(error => {
-                Alert.alert(`Firestore'a eklenirken bir hata ile karşılaşıldı ${error}`);
-            });
-    }
-
-    
-    const handleSend = useCallback((messages = []) => {
-        setMessages(prevMessages => GiftedChat.append(prevMessages, messages));
-    }, []);
     return (
-        <GiftedChat
-            messages={messages}
-            user={{
-                _id: user.uid,
-                name: user.displayName,
-            }}
-            onSend={handleSend} />
+        <LinearGradient colors={['#ffe9d6', '#a7d0cd', '#7b6079']} style={styles.backGround}>
+            <Text style={{ fontSize: 25 }}>Henüz bir bildirim yok!</Text>
+        </LinearGradient>
     )
 }
 
 export default Home;
+
+const styles = StyleSheet.create({
+    backGround: {
+        flex: 1,
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        height: height,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+})

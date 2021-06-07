@@ -36,8 +36,4 @@ const FormInput = ({ icon, touched, error, ...otherProps }) => {
     )
 }
 
-export default FormInput
-
-const styles = StyleSheet.create({
-
-})
+export default FormInput;
