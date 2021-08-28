@@ -1,5 +1,5 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyBMDZvrgBfvHUEGtuMb7aRzs9e1cEySGfI",
+    apiKey: "so secret key",
     authDomain: "agprogramlama-e5204.firebaseapp.com",
     projectId: "agprogramlama-e5204",
     storageBucket: "agprogramlama-e5204.appspot.com",

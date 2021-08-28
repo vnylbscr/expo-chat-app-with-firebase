@@ -53,8 +53,8 @@ const Register = ({ navigation }) => {
             </View>
             <View style={{ paddingHorizontal: 32, marginBottom: 16, width: '100%' }}>
                 <FormInput
-                    icon='person-outline'
-                    placeholder='Kullanıcı adını Gir'
+                    icon='person-circle-outline'
+                    placeholder='Kullanıcı adını gir'
                     autoCapitalize='none'
                     keyboardAppearance='dark'
                     returnKeyType='next'
